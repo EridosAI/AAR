@@ -1,0 +1,10 @@
+subset,n,metric,mean,ci_lower,ci_upper
+overall,7405,baseline_r5,0.8305,0.8246,0.8363
+overall,7405,jar_r5,0.9165,0.9116,0.9213
+overall,7405,delta_r5,+0.0861,+0.0815,+0.0907
+easy,5046,baseline_r5,1.0000,1.0000,1.0000
+easy,5046,jar_r5,0.9973,0.9962,0.9983
+easy,5046,delta_r5,-0.0027,-0.0038,-0.0017
+hard,2359,baseline_r5,0.4678,0.4629,0.4727
+hard,2359,jar_r5,0.7437,0.7315,0.7560
+hard,2359,delta_r5,+0.2760,+0.2652,+0.2870

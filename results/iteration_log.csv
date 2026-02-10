@@ -1,0 +1,17 @@
+iteration,description,model,training_data,R@5,R@10,R@20,delta_R5_vs_baseline,delta_R5_vs_v2,training_time_min,notes
+baseline,Dense cosine retrieval,N/A,N/A,0.8305,0.8783,0.9132,0.00,N/A,N/A,FAISS top-100
+v2,4L 1024h CLIP top-100 alpha=0.30,mlp_v2,20K pairs,0.8537,0.9018,0.9307,+0.0232,-,~2,Current best
+iter1,Bi-directional alpha=0.50 top-100,mlp_v2,20K pairs,0.9165,0.9412,0.9513,+0.0860,+0.0628,12.7,No retraining. Best alpha=0.5
+iter2,Full data 173030p bidi a=0.5,iter2_full_data,173030 pairs,0.8564,0.9055,0.9338,+0.0259,+0.0027,3.1,Corpus: 158776 passages (supporting only)
+iter3,HotpotQA+MuSiQue 222522p bidi a=0.5,iter3_musique,222522 pairs (HP+MQ),0.8525,0.9032,0.9308,+0.0220,-0.0012,4.0,Corpus: 234822 passages
+iter4,6L 2048h 173030p bidi a=0.5,iter4_larger,173030 pairs,0.8883,0.9238,0.9448,+0.0578,+0.0346,8.1,"21,003,265 params, batch=256"
+iter5,Chain weighted 175333p bidi,iter5_chain_weights,175333 pairs (weighted),0.8582,0.9058,0.9327,+0.0277,+0.0045,3.0,Avg weight=1.00. Distant pairs upweighted 2x.
+iter6,Temp sweep best=0.03 bidi,iter6_temp_0.03,173030 pairs,0.8550,0.9045,0.9325,+0.0245,+0.0013,24.7,"Temps: [0.03, 0.05, 0.07, 0.1, 0.15]. Best: 0.03"
+iter7,Projection head + learnable temp bidi,iter7_projection,173030 pairs,0.8095,0.8639,0.9000,-0.0210,-0.0442,4.2,"Proj=256d, learned temp=0.0395"
+iter8_v2_bidi,MuSiQue eval v2_bidi bidi a=0.50,v2_bidi,N/A (eval only),0.2963,0.3518,0.4144,-0.0518,-0.5574,,"MuSiQue baseline: R@5=0.3482, R@10=0.3994, R@20=0.4528"
+iter8_iter4_6L2048h,MuSiQue eval iter4_6L2048h bidi a=0.50,iter4_6L2048h,N/A (eval only),0.3001,0.3549,0.4154,-0.0480,-0.5536,,"MuSiQue baseline: R@5=0.3482, R@10=0.3994, R@20=0.4528"
+iter9_easy,"No-degradation check (easy, n=5046)",v2_bidi,N/A (eval only),0.9973,0.9998,1.0000,-0.0027,+0.1436,,"Easy baseline: {'recall@5': 1.0, 'recall@10': 1.0, 'recall@20': 1.0}"
+iter9_hard,Hard subset (n=2359),v2_bidi,N/A (eval only),0.7437,0.8158,0.8472,+0.2760,-0.1100,,"Hard baseline: {'recall@5': 0.4677829588808817, 'recall@10': 0.6178465451462484, 'recall@20': 0.7274268757948283}"
+iter10a,Ablation: random negatives,iter10a,14622 pairs (random neg),0.9148,0.9400,0.9511,+0.0843,+0.0611,,Random negatives instead of in-batch hard negatives
+iter10b,Ablation: similar (not associated) positives,iter10b,50K similar pairs,0.8097,0.8704,0.9076,-0.0208,-0.0440,,FAISS nearest neighbours as positives
+iter10c,Ablation: shuffled associations,iter10c,14622 pairs (shuffled),0.7304,0.7998,0.8559,-0.1001,-0.1233,,Random passage-to-passage mapping

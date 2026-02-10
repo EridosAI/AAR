@@ -1,0 +1,8 @@
+condition,em,f1,n
+dense_baseline,0.1660,0.3106,500
+aar_matched_hp,0.2300,0.3911,500
+delta,+0.0640,+0.0805,
+delta_em_ci_lower,+0.0340,,
+delta_em_ci_upper,+0.0960,,
+delta_f1_ci_lower,,+0.0542,
+delta_f1_ci_upper,,+0.1084,

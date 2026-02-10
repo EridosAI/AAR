@@ -1,0 +1,7 @@
+component,mean_ms,p50_ms,p95_ms
+faiss_top100,10.45,10.06,12.39
+jar_bidi_scoring,3.66,3.73,5.90
+total_online,14.11,13.73,17.60
+total_precomputed,14.68,14.07,18.57
+dense_only,11.03,10.23,15.91
+precompute_all_passages,258,N/A,N/A

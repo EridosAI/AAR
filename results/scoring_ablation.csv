@@ -1,0 +1,6 @@
+scoring_method,R@5,delta_vs_baseline,lambda,faiss_k
+dense_baseline,0.8305,0.0000,0.6,100
+mixed_bidi,0.9183,+0.0878,0.6,100
+both_transformed,0.8083,-0.0221,0.6,100
+forward_only,0.8253,-0.0051,0.6,100
+reverse_only,0.9280,+0.0976,0.6,100

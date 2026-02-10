@@ -1,0 +1,11 @@
+method,lambda,R@5,R@10,R@20,delta_R5_vs_dense
+dense_baseline,N/A,0.8305,0.8783,0.9132,0.0000
+bm25_only_rerank_top100,1.00,0.6142,0.7221,0.8089,-0.2163
+hybrid_cos_bm25_lambda=0.10,0.10,0.8381,0.8897,0.9208,+0.0076
+hybrid_cos_bm25_lambda=0.20,0.20,0.8099,0.8755,0.9124,-0.0206
+hybrid_cos_bm25_lambda=0.30,0.30,0.7725,0.8502,0.8980,-0.0579
+hybrid_cos_bm25_lambda=0.40,0.40,0.7349,0.8233,0.8819,-0.0955
+hybrid_cos_bm25_lambda=0.50,0.50,0.7018,0.8020,0.8658,-0.1287
+hybrid_cos_bm25_lambda=0.60,0.60,0.6752,0.7820,0.8519,-0.1553
+hybrid_cos_bm25_lambda=0.70,0.70,0.6537,0.7622,0.8390,-0.1768
+aar_transductive_matched_hp,N/A,0.9183,0.9411,0.9508,+0.0878
